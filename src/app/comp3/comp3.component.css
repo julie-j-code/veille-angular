@@ -1,0 +1,14 @@
+.row
+{display: flex;gap: 5vh;}
+.row>div:first-of-type{
+  width: 65vh;;
+ }
+.available{
+  color: green;
+}
+.image{
+  width: 30vh;
+  height: 30vh;
+  background-color: crimson;
+  margin-bottom: 5vh
+}

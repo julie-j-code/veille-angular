@@ -8,6 +8,7 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { TestDirectivesComponent } from './test-directives/test-directives.component';
 import { CustomDirective } from './test-directives/custom.directive';
+import { Comp3Component } from './comp3/comp3.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomDirective } from './test-directives/custom.directive';
     Comp1Component,
     Comp2Component,
     TestDirectivesComponent,
-    CustomDirective
+    CustomDirective,
+    Comp3Component
   ],
   imports: [
     BrowserModule,
