@@ -1,23 +1,37 @@
 <h2>Fake product list</h2>
-<div class="row">
-  <div class="description">
-    <!-- equivalent avec un ngStyle et l'opérateur ternaire -->
-    <p [ngStyle]="{'color': isAvailable=== true ? 'green' : 'red'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae hic neque!</p>
+<!-- la première n'est pas une directive structurelle (ngSwith) donc pas de * -->
+<div [ngSwitch]="selectedCategory">
+  <!-- les doubles guillemets, c'est parce que ici, pour l'exemple nos catégories sont des strings -->
+  <div class="row" *ngSwitchCase="'category1'">
+    <div class="description">
+      <!-- equivalent avec un ngStyle et l'opérateur ternaire -->
+      <p [ngStyle]="{'color': isAvailable=== true ? 'green' : 'red'}">Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Quia molestiae hic neque!</p>
+    </div>
+    <div class="image">
+    </div>
   </div>
-  <div class="image">
+  <div class="row" *ngSwitchCase="'category1'">
+    <div>
+      <p [ngClass]="{'available': false}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae hic
+        neque!</p>
+    </div>
+    <div class="image">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div>
-    <p [ngClass]="{'available': true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae hic neque!</p>
+  <div class="row" *ngSwitchCase="'category2'">
+    <div>
+      <p [ngClass]="{'available': true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae hic
+        neque!</p>
+    </div>
+    <div class="image">
+    </div>
   </div>
-  <div class="image">
-  </div>
-</div>
-<div class="row">
-  <div>
-    <p [ngClass]="{'available': true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae hic neque!</p>
-  </div>
-  <div class="image">
+  <div class="row" *ngSwitchDefault>
+    <div>
+      <p [ngClass]="{'available': true}">This product has not been included in any category...</p>
+    </div>
+    <div class="image">
+    </div>
   </div>
 </div>

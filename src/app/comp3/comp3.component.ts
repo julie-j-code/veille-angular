@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Comp3Component {
   isAvailable:boolean=true
+  // effectivement, si on swith ici entre catégories, on obtient bien côté rendu une selection conforme !!!!
+  selectedCategory:string="category2"
 
-
-  
 }
