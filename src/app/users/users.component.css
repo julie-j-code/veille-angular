@@ -1,0 +1,9 @@
+.row div {padding: 1rem; margin-bottom: 1rem;}
+.row>div:first-of-type{background-color: antiquewhite;}
+.row>div:nth-child(2){
+  background-color: darkgray; color: grey;
+}
+
+.row div.activated{
+  background-color: #74992e; color: white;
+}

@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.row
+{display: flex;gap: 5vh; margin-bottom: 1rem;}
+.row>div:first-of-type{
+  width: 65vh;
+ }
+ .row>div:nth-child(2){width: 25vh;}

@@ -7,6 +7,7 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css'],
   providers: [DataService]
 })
+
 export class AppComponent {
   title = 'tutos';
 

@@ -1,0 +1,12 @@
+<p>add-user works!</p>
+
+<div class="form">
+
+  <div><input type="text" placeholder="User Name" id="name" [(ngModel)]="name"></div>
+  <div><select placeholder="status" id="status" name="status" [(ngModel)]="status">
+      <option value="active" name="active" >Active</option>
+      <option value="inactive" name="inactive">Inactive</option>
+    </select></div>
+    <button (click)="addUser()">Add User</button>
+
+</div>

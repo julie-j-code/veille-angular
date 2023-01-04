@@ -1,0 +1,10 @@
+<h2>Fake Users Works </h2>
+
+<app-add-user></app-add-user>
+
+<div *ngFor="let user of users">
+  <div class="row">
+    <div>{{user.name}}</div>
+    <div [ngClass]="{'activated': user.status==='active'}">{{user.status}}</div>
+  </div>
+</div>

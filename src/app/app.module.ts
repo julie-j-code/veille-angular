@@ -9,6 +9,8 @@ import { Comp2Component } from './comp2/comp2.component';
 import { TestDirectivesComponent } from './test-directives/test-directives.component';
 import { CustomDirective } from './test-directives/custom.directive';
 import { Comp3Component } from './comp3/comp3.component';
+import { UsersComponent } from './users/users.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { Comp3Component } from './comp3/comp3.component';
     Comp2Component,
     TestDirectivesComponent,
     CustomDirective,
-    Comp3Component
+    Comp3Component,
+    UsersComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.form{display: flex; gap: 1rem;}
+input, select, button{padding: 0.5rem 1rem; margin-bottom: 1rem;}
+
+@media screen and (max-with:750px) {
+  .form{
+    flex-direction: column;
+  }
+
+}
