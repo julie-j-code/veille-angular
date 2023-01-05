@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-creating-observables',
@@ -39,9 +39,11 @@ export class CreatingObservablesComponent implements OnInit {
   // Method using the of operator
   array1=[1,2,3,4,5]
   array2=["A","B","C","D","E"]
-  // We can notice that one of the advantage is that we do not need to emit a complete signal. The of operator will emit a complet signal after emitting the complete data
+  // We can notice that one of the advantage is that we do not need to emit a complete signal. The of operator will emit a complet signal after emitting the complete data ++ it accepts UNLIMITTED NUMBER of arguments
   // But for that case, it will emil, the first, following by the second array. Not suitable here...
-  myObservable = of(this.array1, this.array2)
+
+   // Method using the from operator that will take only a SINGLE argument iterable. With the advantage of emitting one by one items from an array
+  myObservable = from(this.array1)
 
   ngOnInit(): void {
     this.myObservable.subscribe((val:any) => {
