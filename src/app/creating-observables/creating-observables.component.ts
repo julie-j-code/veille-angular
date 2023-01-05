@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
+import { from, map, Observable, of, pipe, filter } from 'rxjs';
 
 @Component({
   selector: 'app-creating-observables',
@@ -37,18 +37,24 @@ export class CreatingObservablesComponent implements OnInit {
   // })
 
   // Method using the of operator
-  array1=[1,2,3,4,5]
-  array2=["A","B","C","D","E"]
+  array1 = [1, 5, 7, 13, 20]
+  array2 = ["A", "B", "C", "D", "E"]
   // We can notice that one of the advantage is that we do not need to emit a complete signal. The of operator will emit a complet signal after emitting the complete data ++ it accepts UNLIMITTED NUMBER of arguments
   // But for that case, it will emil, the first, following by the second array. Not suitable here...
 
-   // Method using the from operator that will take only a SINGLE argument iterable. With the advantage of emitting one by one items from an array
+  // Method using the from operator that will take only a SINGLE argument iterable. With the advantage of emitting one by one items from an array
   myObservable = from(this.array1)
 
+  // OK :  transformedObs = this.myObservable.pipe(map((val) => val * 2))
+  // OK :  filteredObs = this.transformedObs.pipe(filter((val) => val > 12))
+
+  // same as combining map and operators using a single map method :
+  transformedObs = this.myObservable.pipe(map((val) => val * 2), filter((val) => val > 12))
+
   ngOnInit(): void {
-    this.myObservable.subscribe((val:any) => {
+    this.transformedObs.subscribe((val: any) => {
       console.log(val)
-    }, (error:any) => {
+    }, (error: any) => {
       alert(error.message)
     }, () => {
       alert('Observable has complet emitting all values')
