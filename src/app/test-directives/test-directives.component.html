@@ -1,4 +1,29 @@
-<p>test-directives works!</p>
+<h2>test-directives works!</h2>
 
 <p appCustom>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, enim?</p>
 <p appCustom background>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus ducimus dolores, tempora repudiandae dolor dignissimos maxime facere. Magnam, natus dolorum.</p>
+
+<hr>
+
+<h2>Conditional Directive</h2>
+<div class="container">
+  <div class="video-container" *ngFor="let video of videos">
+    <div class="video-card" [appHighlight]="video.likes === mostLikedVideo.likes">
+        <div>
+            <img [src]="video.thumbnail" style="width:220px; height:210px;">
+        </div>
+        <div><h4>{{video.title}}</h4></div>
+        <div class="details">
+            <div class="video-data">
+              <i class="material-icons">thumb_up</i>{{video.likes}}
+            </div>
+            <div class="video-data">
+              <i class="material-icons">thumb_down</i>{{video.dislikes}}
+            </div>
+            <div class="video-data">
+              <i class="material-icons">reply_all</i>{{video.share}}
+            </div>
+        </div>
+    </div>
+</div>
+</div>

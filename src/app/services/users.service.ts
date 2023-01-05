@@ -16,6 +16,8 @@ export class UsersService {
 
    }
   AddNewUser(name:string, status:string){
+    console.log(name);
+
     this.users.push({name:name, status:status})
     this.logger.logMessage(name,status)
   }

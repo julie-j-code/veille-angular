@@ -8,6 +8,7 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { TestDirectivesComponent } from './test-directives/test-directives.component';
 import { CustomDirective } from './test-directives/custom.directive';
+import { HighlightDirective } from './test-directives/highlight.directive';
 import { Comp3Component } from './comp3/comp3.component';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -18,6 +19,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     Comp1Component,
     Comp2Component,
     TestDirectivesComponent,
+    HighlightDirective,
     CustomDirective,
     Comp3Component,
     UsersComponent,

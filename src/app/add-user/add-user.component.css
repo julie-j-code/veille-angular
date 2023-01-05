@@ -1,6 +1,16 @@
 .form{display: flex; gap: 1rem;}
 input, select, button{padding: 0.5rem 1rem; margin-bottom: 1rem;}
 
+input.ng-invalid.ng-touched{border: red 1px solid;}
+
+input.ng-valid{border: green 1px solid;}
+
+/* input.ng-touched{border: black 1px solid;} */
+
+span{
+  color:red; font-size: smaller; display: block; margin-bottom: 1rem;
+}
+
 @media screen and (max-with:750px) {
   .form{
     flex-direction: column;

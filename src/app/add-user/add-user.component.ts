@@ -14,9 +14,13 @@ export class AddUserComponent {
 
   }
 
-  addUser(){
-    this.userService.AddNewUser(this.name, this.status)
+  addUser(form:any){
+    // this.userService.AddNewUser(this.name, this.status)
+    // désormais équivalent à
+    this.userService.AddNewUser(form.value.name, form.value.status)
     console.log(this.userService.getUser);
+    console.log(form.value);
+
   }
 
 }
