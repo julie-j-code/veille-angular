@@ -12,6 +12,7 @@ import { HighlightDirective } from './test-directives/highlight.directive';
 import { Comp3Component } from './comp3/comp3.component';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { CreatingObservablesComponent } from './creating-observables/creating-observables.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     CustomDirective,
     Comp3Component,
     UsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    CreatingObservablesComponent
   ],
   imports: [
     BrowserModule,
