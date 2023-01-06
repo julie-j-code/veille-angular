@@ -14,9 +14,8 @@ users:{name:string, status:string}[]=[]
   }
 
   ngOnInit(): void {
-    this.users=this.userService.getUser()
+    this.users=this.userService.getUsers()
     console.log(this.users);
-
   }
 
 }

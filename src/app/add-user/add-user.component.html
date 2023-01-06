@@ -1,13 +1,36 @@
-<p>add-user works!</p>
+<div class="form">
+  <h2 id="registration">Registration Form</h2>
+  <form (ngSubmit)="addUser(form)" #form="ngForm">
 
-<form #form="ngForm" (ngSubmit)="addUser(form)" class="form">
-  <div><input type="text" placeholder="User Name" id="name" ngModel name="name" required #name="ngModel">
-    <span *ngIf="name.invalid && name.touched">The name is a required field</span>
-  </div>
-  <div><select placeholder="status" id="status" name="status" ngModel name="status" required #status="ngModel">
-      <option value="active" name="active">Active</option>
-      <option value="inactive" name="inactive">Inactive</option>
-    </select></div>
-  <button type="submit">Add User</button>
+    <div ngModelGroup="personDetails" #personalDetail="ngModelGroup">
+      <label for="name">User Name</label>
+      <input type="text" id="name" placeholder="Your User name.." name="name" ngModel required #name="ngModel">
+      <!-- <div>
+          <small *ngIf="name.invalid && name.touched">User Name is a required field</small>
+          <span *ngIf="name">You entered {{name}}</span>
+        </div> -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your last email.." name="email" ngModel required email>
+      <div>
+        <small *ngIf="personalDetail.invalid && personalDetail.touched">Some of the required fields does not have valid
+          value.</small>
+      </div>
+    </div>
+    <div>
+      <label for="status">Status</label>
+      <!-- use of two way binding [(ngModel)]="status" as value is binded to default value -->
+      <select placeholder="status" id="status" name="status" [(ngModel)]="status" name="status" required>
+        <option value="active" name="active">Active</option>
+        <option value="inactive" name="inactive">Inactive</option>
+      </select>
+    </div>
+    <label for="gender">Gender:</label>
+    <span *ngFor="let gen of genders">
+      <input type="radio" id="{{gen.id}}" value="{{gen.value}}" name="gender" ngModel>
+      <label for="male">{{gen.value}}</label>
+    </span>
+    <br><br>
 
-</form>
+    <input type="submit" value="Submit" id="btn"><!--[disabled]="!myForm.valid"-->
+  </form>
+</div>

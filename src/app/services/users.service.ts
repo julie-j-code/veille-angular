@@ -22,7 +22,7 @@ export class UsersService {
     this.logger.logMessage(name,status)
   }
 
-  getUser(){
+  getUsers(){
     return this.users
   }
 
