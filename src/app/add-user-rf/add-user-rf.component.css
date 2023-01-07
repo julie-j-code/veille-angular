@@ -1,3 +1,4 @@
+
 input[type=text],[type=email], select {
   width: 100%;
   padding: 12px 20px;
@@ -36,6 +37,15 @@ input.ng-invalid.ng-touched{
 }
 small{
   color: red;
+  padding-bottom:  12px
+}
+small.validate{
+  color: #45a049;
+}
+label{
+  /* important !!!! */
+  margin: 1rem 0 0 0;
+  display: inline-flex;
 }
 
 @media screen and (max-width:800px) {

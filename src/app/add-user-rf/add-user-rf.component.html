@@ -4,9 +4,18 @@
 
     <label for="name">User Name</label>
     <input type="text" id="name" placeholder="Your User name.." name="name" formControlName="name">
+    <div>
+      <!-- myReactiveForm has a get metho to which we will pass the name of the formControlName as argument ! -->
+      <small *ngIf="!myReactiveForm.get('name')?.valid && myReactiveForm.get('name')?.touched">User Name is a required
+        field</small>
+      <small class="validate" *ngIf="myReactiveForm.get('name')?.valid">You entered
+        {{myReactiveForm.value.name}}</small>
+    </div>
     <label for="email">Email</label>
     <input type="email" id="email" name="email" placeholder="Your last email.." name="email" formControlName="email">
-
+    <!-- we can use the same directive to display error messages regarding each formControlName... -->
+    <small *ngIf="!myReactiveForm.get('email')?.valid && myReactiveForm.get('email')?.touched">Email is a required field</small>
+    <small class="validate" *ngIf="myReactiveForm.get('email')?.valid">You entered {{myReactiveForm.value.email}}</small>
 
     <div>
       <label for="status">Status</label>
