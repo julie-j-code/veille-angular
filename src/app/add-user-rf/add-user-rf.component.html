@@ -2,36 +2,48 @@
   <h2 id="registration">{{title}}</h2>
   <form [formGroup]="myReactiveForm" (ngSubmit)="addUser()">
 
-    <label for="name">User Name</label>
-    <input type="text" id="name" placeholder="Your User name.." name="name" formControlName="name">
-    <div>
-      <!-- myReactiveForm has a get metho to which we will pass the name of the formControlName as argument ! -->
-      <small *ngIf="!myReactiveForm.get('name')?.valid && myReactiveForm.get('name')?.touched">User Name is a required
-        field</small>
-      <small class="validate" *ngIf="myReactiveForm.get('name')?.valid">You entered
-        {{myReactiveForm.value.name}}</small>
-    </div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Your last email.." name="email" formControlName="email">
-    <!-- we can use the same directive to display error messages regarding each formControlName... -->
-    <small *ngIf="!myReactiveForm.get('email')?.valid && myReactiveForm.get('email')?.touched">Email is a required field</small>
-    <small class="validate" *ngIf="myReactiveForm.get('email')?.valid">You entered {{myReactiveForm.value.email}}</small>
+    <div formGroupName="personalDetails">
+      <div>
+        <label for="name">User Name</label>
+        <input type="text" id="name" placeholder="Your User name.." name="name" formControlName="name">
+        <!-- I do not like it !!!!! WAF !!! -->
+        <small
+          *ngIf="!myReactiveForm.get('personalDetails.name')?.valid && myReactiveForm.get('personalDetails.name')?.touched">User
+          Name is a required
+          field</small>
+        <small class="validate" *ngIf="myReactiveForm.get('personalDetails.name')?.valid">You entered
+          {{myReactiveForm.value.personalDetails.name}}</small>
+      </div>
 
-    <div>
-      <label for="status">Status</label>
-      <select placeholder="status" id="status" name="status" name="status" formControlName="status">
-        <option value="active" name="active">Active</option>
-        <option value="inactive" name="inactive">Inactive</option>
-      </select>
-    </div>
-    <label for="gender">Gender:</label>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your last email.." name="email"
+          formControlName="email">
+        <small
+          *ngIf="!myReactiveForm.get('personalDetails.email')?.valid && myReactiveForm.get('personalDetails.email')?.touched">Email
+          is a required field</small>
+        <small class="validate"
+          *ngIf="myReactiveForm.get('personalDetails.email')?.valid && myReactiveForm.get('personalDetails.email')?.touched">You
+          entered {{myReactiveForm.value.personalDetails.email}}</small>
+      </div>
 
-    <input type="radio" id="femal" value="femal" name="gender" formControlName="gender">
-    <label for="male">femal</label>
-    <input type="radio" id="mal" value="mal" name="gender" formControlName="gender">
-    <label for="male">mal</label>
-    <input type="radio" id="other" value="other" name="gender" formControlName="gender">
-    <label for="male">other</label>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="femal" value="femal" name="gender" formControlName="gender">
+        <label for="male">femal</label>
+        <input type="radio" id="mal" value="mal" name="gender" formControlName="gender">
+        <label for="male">mal</label>
+        <input type="radio" id="other" value="other" name="gender" formControlName="gender">
+        <label for="male">other</label>
+      </div>
+
+    </div>
+
+    <label for="status">Status</label>
+    <select placeholder="status" id="status" name="status" name="status" formControlName="status">
+      <option value="active" name="active">Active</option>
+      <option value="inactive" name="inactive">Inactive</option>
+    </select>
 
     <br><br>
 
