@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -13,6 +14,7 @@ import { Comp3Component } from './comp3/comp3.component';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { CreatingObservablesComponent } from './creating-observables/creating-observables.component';
+import { AddUserRfComponent } from './add-user-rf/add-user-rf.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { CreatingObservablesComponent } from './creating-observables/creating-ob
     Comp3Component,
     UsersComponent,
     AddUserComponent,
-    CreatingObservablesComponent
+    CreatingObservablesComponent,
+    AddUserRfComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

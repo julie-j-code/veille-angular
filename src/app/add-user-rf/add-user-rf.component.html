@@ -1,0 +1,31 @@
+<div class="form">
+  <h2 id="registration">{{title}}</h2>
+  <form [formGroup]="myReactiveForm" (ngSubmit)="addUser()">
+
+    <label for="name">User Name</label>
+    <input type="text" id="name" placeholder="Your User name.." name="name" formControlName="name">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your last email.." name="email" formControlName="email">
+
+
+    <div>
+      <label for="status">Status</label>
+      <select placeholder="status" id="status" name="status" name="status" formControlName="status">
+        <option value="active" name="active">Active</option>
+        <option value="inactive" name="inactive">Inactive</option>
+      </select>
+    </div>
+    <label for="gender">Gender:</label>
+
+    <input type="radio" id="femal" value="femal" name="gender" formControlName="gender">
+    <label for="male">femal</label>
+    <input type="radio" id="mal" value="mal" name="gender" formControlName="gender">
+    <label for="male">mal</label>
+    <input type="radio" id="other" value="other" name="gender" formControlName="gender">
+    <label for="male">other</label>
+
+    <br><br>
+
+    <input type="submit" value="Submit" id="btn"><!--[disabled]="!myForm.valid"-->
+  </form>
+</div>

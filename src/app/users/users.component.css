@@ -1,9 +1,17 @@
-.row div {padding: 1rem; margin-bottom: 1rem;}
-.row>div:first-of-type{background-color: antiquewhite;}
-.row>div:nth-child(2){
-  background-color: darkgray; color: grey;
+.row div {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.row > div:first-of-type {
+  background-color: antiquewhite;
+}
+.row > div:nth-child(2) {
+  background-color: darkgray;
+  color: grey;
 }
 
-.row div.activated{
-  background-color: #74992e; color: white;
+.row div.activated {
+  background-color: #4caf50;
+  color: white;
 }

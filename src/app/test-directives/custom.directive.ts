@@ -11,7 +11,8 @@ export class CustomDirective implements OnInit {
 
   ngOnInit(): void {
 
-    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', '#74992e')
+    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', '#4CAF50')
+    this.renderer.setStyle(this.element.nativeElement, 'borderRadius', '4px')
     this.renderer.setStyle(this.element.nativeElement, 'padding', '1rem')
     this.renderer.setStyle(this.element.nativeElement, 'transition', '0.5s')
   }
@@ -21,7 +22,7 @@ export class CustomDirective implements OnInit {
 
   @HostBinding('style.padding') padding:string ='#1rem';
 
-  // c'est ce qu'on a nommé padding pour se référer à style.padding qui devient la référence pour toutes les instsructions du HostListener... 
+  // c'est ce qu'on a nommé padding pour se référer à style.padding qui devient la référence pour toutes les instsructions du HostListener...
   @HostListener('mouseenter') hostMouseOver(){
     this.padding="2rem"
     // this.renderer.setStyle(this.element.nativeElement, "padding", '2rem')
